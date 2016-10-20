@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shadow"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_height="70dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/txt_indicator"
+            android:layout_width="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center|left"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/txt_indicator"
+            android:layout_alignBottom="@+id/txt_indicator"
+            android:layout_alignTop="@+id/txt_indicator">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:id="@+id/textView6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_date"
+                android:text="12/12/2016" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingRight="5dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/id_text_avg_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Avg. Changes"/>
+
+        <TextView
+            android:id="@+id/txt_avg_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_text_avg_changes"
+            android:text="+0.22%"
+            android:layout_marginRight="10dp"
+            android:textColor="#8DCF5F"
+            android:layout_toLeftOf="@+id/id_text_total"
+            android:layout_toStartOf="@+id/id_text_total" />
+
+        <TextView
+            android:id="@+id/id_text_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/id_text_avg_changes"
+            android:text="Closing Price"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/txt_total_daily_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_text_total"
+            android:text="10253.00 Tk"
+            android:layout_alignRight="@+id/id_text_total"
+            android:layout_alignEnd="@+id/id_text_total" />
+
+    </RelativeLayout>
+</LinearLayout>

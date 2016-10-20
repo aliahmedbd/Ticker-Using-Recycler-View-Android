@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="5dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow">
+
+    <ImageView
+        android:id="@+id/img_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/up"/>
+
+
+    <TextView
+        android:id="@+id/txt_current_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/txt_stock_name"
+        android:layout_toRightOf="@+id/img_up"
+        android:layout_toEndOf="@+id/img_up" />
+
+    <TextView
+        android:id="@+id/txt_stock_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/img_up"
+        android:layout_toEndOf="@+id/img_up" />
+
+    <TextView
+        android:id="@+id/txt_percantage_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00%"
+        android:layout_toRightOf="@+id/txt_current_price"
+        android:layout_alignTop="@+id/txt_current_price"
+        android:layout_alignBottom="@+id/txt_current_price" />
+
+
+</RelativeLayout>
