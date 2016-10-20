@@ -1,4 +1,4 @@
-#Creating a RecyclerView like Marquee text in Android 
+#Creating a Autoscrolled RecyclerView like Marquee text in Android 
 #(Like auto scroll Newsfeed) 
  
 ###Why this article? 
