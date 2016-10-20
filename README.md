@@ -1,5 +1,5 @@
 #Creating a Autoscrolled RecyclerView like Marquee text in Android 
-#(Like auto scroll Newsfeed) 
+####(Like autoscrolled Newsfeed) 
  
 ###Why this article? 
 Sometimes in our android apps need a marquee text effect like smooth autoscroll horizontally or vertically. 
