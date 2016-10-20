@@ -7,7 +7,7 @@ Sometimes in our android apps need a marquee text effect like smooth autoscroll 
 For breaking news app there is a most necessary functionality which is show the breaking news like a horizontal scroll.  
 Again, In share market app in top app should give a auto scroll effect for show the text. 
 
-Inline-style: 
+Stock exchange scroll: 
 ![alt text](https://github.com/aliahmedbd/Marquee-Text-Android/blob/master/share%20bazar.PNG "Share bazar scroll")
 
   
