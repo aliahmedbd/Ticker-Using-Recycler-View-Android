@@ -1,4 +1,4 @@
-#Creating a Autoscrolled RecyclerView like Marquee text in Android 
+#Creating a Autoscrolled RecyclerView like Marquee text in Android also known as "Ticker in android"
  
 ###Why this article? 
 Sometimes in our android apps need a marquee text effect like smooth autoscroll horizontally or vertically. 
