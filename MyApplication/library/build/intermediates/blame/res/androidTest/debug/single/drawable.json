@@ -1,7 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\BS167\\Documents\\Marquee-Text-Android-Using-RecyclerView-like-Ticker\\MyApplication\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sample_footer_loading.png",
+        "source": "C:\\Users\\BS167\\Documents\\Marquee-Text-Android-Using-RecyclerView-like-Ticker\\MyApplication\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\sample_footer_loading.png"
+    },
+    {
         "merged": "C:\\Users\\BS058\\Documents\\cse\\android\\CSE\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sample_footer_loading_progress.xml",
         "source": "C:\\Users\\BS058\\Documents\\cse\\android\\CSE\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\sample_footer_loading_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\BS167\\Documents\\Marquee-Text-Android-Using-RecyclerView-like-Ticker\\MyApplication\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sample_footer_loading_progress.xml",
+        "source": "C:\\Users\\BS167\\Documents\\Marquee-Text-Android-Using-RecyclerView-like-Ticker\\MyApplication\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\sample_footer_loading_progress.xml"
     },
     {
         "merged": "C:\\Users\\BS058\\Documents\\GitHub\\MyApplication\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sample_footer_loading.png",

@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,12 @@ public class AutoScroll extends AppCompatActivity {
     RecyclerView rec_scroll_stock;
 
     List<StockListModel> stockListModels = new ArrayList<>();
-    private ScrollStockAdapter scrollStockAdapter;
+    //private ScrollStockAdapter scrollStockAdapter;
+    private ScrollCustomAdapter scrollStockAdapter;
     StockListModel model = new StockListModel();
+
+    //new count added
+    int scrollCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +73,19 @@ public class AutoScroll extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        scrollStockAdapter = new ScrollStockAdapter(stockListModels);
+        scrollStockAdapter = new ScrollCustomAdapter(this,stockListModels) {
+            @Override
+            public void load() {
+                stockListModels.addAll(stockListModels);
+            }
+        };
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(AutoScroll.this) {
+
             @Override
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
                 LinearSmoothScroller smoothScroller = new LinearSmoothScroller(AutoScroll.this) {
-
-                    private static final float SPEED = 4000f;// Change this value (default=25f)
+                    private static final float SPEED = 2000f;// Change this value (default=25f)
                     @Override
                     protected float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
                         return SPEED / displayMetrics.densityDpi;
@@ -84,16 +94,18 @@ public class AutoScroll extends AppCompatActivity {
                 smoothScroller.setTargetPosition(position);
                 startSmoothScroll(smoothScroller);
             }
-
         };
-        autoScroll();
+        autoScrollAnother();
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rec_scroll_stock.setLayoutManager(layoutManager);
+        rec_scroll_stock.setHasFixedSize(true);
+        rec_scroll_stock.setItemViewCacheSize(10);
+        rec_scroll_stock.setDrawingCacheEnabled(true);
+        rec_scroll_stock.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         rec_scroll_stock.setAdapter(scrollStockAdapter);
-
     }
 
-    //for auto scroll
+    //old auto scroll
     public void autoScroll(){
         final int speedScroll = 1000;
         final Handler handler = new Handler();
@@ -110,5 +122,24 @@ public class AutoScroll extends AppCompatActivity {
             }
         };
         handler.postDelayed(runnable,speedScroll);
+    }
+
+    //new auto scroll
+    public void autoScrollAnother() {
+        scrollCount = 0;
+        final int speedScroll = 1200;
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if(scrollCount == scrollStockAdapter.getItemCount()){
+                    scrollStockAdapter.load();
+                    scrollStockAdapter.notifyDataSetChanged();
+                }
+                rec_scroll_stock.smoothScrollToPosition((scrollCount++));
+                handler.postDelayed(this, speedScroll);
+            }
+        };
+        handler.postDelayed(runnable, speedScroll);
     }
 }
