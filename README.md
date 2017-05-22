@@ -1,8 +1,8 @@
-#Creating a Autoscrolled RecyclerView like Marquee text in Android also known as "Ticker in android"
+# Creating a Autoscrolled RecyclerView like Marquee text in Android also known as "Ticker in android"
  
-###Why this article? 
+### Why this article? 
 Sometimes in our android apps need a marquee text effect like smooth autoscroll horizontally or vertically. 
-#####Example:
+##### Example:
 For breaking news app there is a most necessary functionality which is show the breaking news like a horizontal scroll.  
 Again, In share market app in top app should give a auto scroll effect for show the text. 
 
@@ -12,11 +12,11 @@ Stock exchange scroll:
   
 But in android there is no perfect library for marquee text but in this article I will give a simplest solution for marquee text. 
  
-###Procedure: 
-####Add RecyclerView: 
+### Procedure: 
+#### Add RecyclerView: 
 Add RecyclerView as your desire place and also add dependency in gradle. 
  
-####XML: 
+#### XML: 
 ```xml
 <android.support.v7.widget.RecyclerView 
     android:id="@+id/rec_all_stocks" 
@@ -27,17 +27,17 @@ Add RecyclerView as your desire place and also add dependency in gradle.
     android:layout_alignParentStart="true"></android.support.v7.widget.RecyclerView> 
     
 ```
-####Gradle :  
+#### Gradle :  
 ```java
 compile 'com.android.support:recyclerview-v7:24.2.0' 
 
 ```
  
  
-####Create adapter for RecyclerView 
+#### Create adapter for RecyclerView 
 Create adapter for RecyclerView. If you don't know how to create adapter please follow this link: [Click Here](http://antonioleiva.com/recyclerview/ ) 
  
-####Make horizontal scroll 
+#### Make horizontal scroll 
 For RecyclerView we have to use LayoutManager there is a method which is :  
 
 ```java
@@ -52,7 +52,7 @@ Then use this in RecyclerView :
     
 Then your RecyclerView will srolled in horizontally. 
 
-####Creating auto scroll for RecyclerView 
+#### Creating auto scroll for RecyclerView 
 Here I use a thread which will perform autoscroll the items of RecyclerView. There is a method in RecyclerView which is smoothScrollToPosition() which take position of recyclerview to scroll that position to current position. So I use a thread to increment the position automatically so an autoscroll is happening because position is incremented automatically. When all incremented position will equal to the total item size then start from beginning. In this way an autoscroll effect is happened.   
 Here is the code :  
 
@@ -76,7 +76,7 @@ public void autoScroll(){
 } 
 ```
  
-####Create Smooth scroll automatically 
+#### Create Smooth scroll automatically 
 Now main problem is auto scroll speed which is too fast. For RecyclerView we have to declare a LayoutManager. In LayoutManager  there is a method which is  smoothScrollToPosition() which is responsible for smooth scrolling. But for scrolling there is a velocity which default speed is 25f. To change this velocity you have to override this method. If you want a smooth scroll then increase this value as you want. In my case I use 4000f.  
 ```java
 LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this) { 
@@ -98,7 +98,7 @@ LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this) {
 Then set this LayoutManager to your RecyclerView like this : 
 yourRecyclerView.setLayoutManager(layoutManager); 
  
-####Conclusion: 
+#### Conclusion: 
  In this way you can get a look and feel like Marquee text or like news feed. 
  
  
