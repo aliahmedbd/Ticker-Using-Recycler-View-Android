@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 public class AutoScroll extends AppCompatActivity {
 
     @BindView(R.id.rec_scroll_stock)
-    RecyclerView rec_scroll_stock;
+    RecyclerView rvTickerList;
 
     List<StockListModel> stockListModels = new ArrayList<>();
     private ScrollStockAdapter scrollStockAdapter;
@@ -70,7 +70,7 @@ public class AutoScroll extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         scrollStockAdapter = new ScrollStockAdapter(stockListModels);
-        rec_scroll_stock.setAdapter(scrollStockAdapter);
+        rvTickerList.setAdapter(scrollStockAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(AutoScroll.this) {
 
@@ -91,12 +91,12 @@ public class AutoScroll extends AppCompatActivity {
         //  LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         autoScrollAnother();
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rec_scroll_stock.setLayoutManager(layoutManager);
-        rec_scroll_stock.setHasFixedSize(true);
-        rec_scroll_stock.setItemViewCacheSize(1000);
-        rec_scroll_stock.setDrawingCacheEnabled(true);
-        rec_scroll_stock.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        rec_scroll_stock.setAdapter(scrollStockAdapter);
+        rvTickerList.setLayoutManager(layoutManager);
+        rvTickerList.setHasFixedSize(true);
+        rvTickerList.setItemViewCacheSize(1000);
+        rvTickerList.setDrawingCacheEnabled(true);
+        rvTickerList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        rvTickerList.setAdapter(scrollStockAdapter);
     }
 
     /**
@@ -108,7 +108,7 @@ public class AutoScroll extends AppCompatActivity {
         final Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                rec_scroll_stock.smoothScrollToPosition((scrollCount++));
+                rvTickerList.smoothScrollToPosition((scrollCount++));
                 if (scrollCount == scrollStockAdapter.getData().size() - 4) {
                     stockListModels.addAll(stockListModels);
                     scrollStockAdapter.notifyDataSetChanged();
