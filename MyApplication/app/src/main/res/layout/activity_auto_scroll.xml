@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_auto_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bs058.myapplication.AutoScroll">
+    tools:context="com.example.aliahmed.myapplication.AutoScroll">
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_scroll_stock"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="50dp"></android.support.v7.widget.RecyclerView>
+        android:layout_height="50dp"
+        android:orientation="vertical" />
 </RelativeLayout>
