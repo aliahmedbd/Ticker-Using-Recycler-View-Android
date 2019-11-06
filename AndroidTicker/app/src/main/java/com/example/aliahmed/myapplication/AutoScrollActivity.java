@@ -19,7 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AutoScroll extends AppCompatActivity {
+public class AutoScrollActivity extends AppCompatActivity {
 
     @BindView(R.id.rec_scroll_stock)
     RecyclerView rvTickerList;
@@ -75,11 +75,11 @@ public class AutoScroll extends AppCompatActivity {
         scrollStockAdapter = new ScrollStockAdapter(stockListModels);
         rvTickerList.setAdapter(scrollStockAdapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(AutoScroll.this) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(AutoScrollActivity.this) {
 
             @Override
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
-                LinearSmoothScroller smoothScroller = new LinearSmoothScroller(AutoScroll.this) {
+                LinearSmoothScroller smoothScroller = new LinearSmoothScroller(AutoScrollActivity.this) {
                     private static final float SPEED = 3500f;// Change this value (default=25f)
 
                     @Override
@@ -104,7 +104,7 @@ public class AutoScroll extends AppCompatActivity {
         scrollStockAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(AutoScroll.this, "Item clicked", Toast.LENGTH_LONG).show();
+                Toast.makeText(AutoScrollActivity.this, "Item clicked", Toast.LENGTH_LONG).show();
             }
         });
     }
