@@ -18,16 +18,12 @@ import butterknife.ButterKnife;
 
 public class AutoScroll extends AppCompatActivity {
 
-
     @BindView(R.id.rec_scroll_stock)
     RecyclerView rec_scroll_stock;
 
     List<StockListModel> stockListModels = new ArrayList<>();
-    //private ScrollStockAdapter scrollStockAdapter;
     private ScrollStockAdapter scrollStockAdapter;
     StockListModel model = new StockListModel();
-
-    //new count added
     int scrollCount = 0;
 
     @Override
@@ -76,13 +72,6 @@ public class AutoScroll extends AppCompatActivity {
         scrollStockAdapter = new ScrollStockAdapter(stockListModels);
         rec_scroll_stock.setAdapter(scrollStockAdapter);
 
-//        scrollStockAdapter = new ScrollCustomAdapter(this, stockListModels) {
-//            @Override
-//            public void load() {
-//                stockListModels.addAll(stockListModels);
-//            }
-//        };stockListModels
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(AutoScroll.this) {
 
             @Override
@@ -110,11 +99,11 @@ public class AutoScroll extends AppCompatActivity {
         rec_scroll_stock.setAdapter(scrollStockAdapter);
     }
 
-    //old auto scroll
+    /**
+     * Autoscroll detected from here, where counter, time and runnable is declared.
+     */
     public void autoScrollAnother() {
-        int count = 0;
         scrollCount = 0;
-        final int speedScroll = 2000;
         final Handler handler = new Handler();
         final Runnable runnable = new Runnable() {
             @Override
@@ -130,24 +119,3 @@ public class AutoScroll extends AppCompatActivity {
         handler.postDelayed(runnable, 2000);
     }
 }
-
-
-//    //new auto scroll
-//    public void autoScrollAnother() {
-//        scrollCount = 0;
-//        final int speedScroll = 1200;
-//        final Handler handler = new Handler();
-//        final Runnable runnable = new Runnable() {
-//            @Override
-//            public void run() {
-//                if (scrollCount == scrollStockAdapter.getData().size()) {
-//                    scrollStockAdapter.setData(scrollStockAdapter.getData().size(), model);
-//                    scrollStockAdapter.notifyDataSetChanged();
-//                }
-//                rec_scroll_stock.smoothScrollToPosition((scrollCount++));
-//                handler.postDelayed(this, speedScroll);
-//            }
-//        };
-//        handler.postDelayed(runnable, speedScroll);
-//    }
-
