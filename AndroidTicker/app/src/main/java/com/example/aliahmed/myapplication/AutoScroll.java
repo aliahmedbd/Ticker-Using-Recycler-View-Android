@@ -4,11 +4,14 @@ import android.os.Handler;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +100,13 @@ public class AutoScroll extends AppCompatActivity {
         rvTickerList.setDrawingCacheEnabled(true);
         rvTickerList.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         rvTickerList.setAdapter(scrollStockAdapter);
+
+        scrollStockAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Toast.makeText(AutoScroll.this, "Item clicked", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     /**
