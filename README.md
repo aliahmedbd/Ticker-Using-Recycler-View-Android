@@ -7,7 +7,7 @@ For breaking news app there is a most necessary functionality which is show the 
 Again, In share market app in top app should give a auto scroll effect for show the text. 
 
 Stock exchange scroll: 
-![alt text](https://github.com/aliahmedbd/Marquee-Text-Android/blob/master/share%20bazar.PNG "Share bazar scroll")
+![alt text](https://github.com/aliahmedbd/Ticker-Using-Recycler-View-Android/blob/master/ezgif.com-crop.gif "Example Activity")
 
   
 But in android there is no perfect library for marquee text but in this article I will give a simplest solution for marquee text. 
