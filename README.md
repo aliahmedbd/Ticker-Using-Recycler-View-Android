@@ -101,9 +101,6 @@ yourRecyclerView.setLayoutManager(layoutManager);
 #### Conclusion: 
  In this way you can get a look and feel like Marquee text or like news feed. 
  
- 
- N.B: If you are using this repository in your project, and happy about it, please send me a email and let me know, I'll add a references of your app. Thanks :)
- 
  ### Using this repository in your project?
 If you are using this repository in your project, and happy about it, please send me a [email](mailto:aliahmedaiub@gmail.com) and let me know, I'll add a references of your app. Thanks :)
  
